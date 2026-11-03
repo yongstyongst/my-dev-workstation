@@ -1,0 +1,6 @@
+=== Current directory ===
+/home/dumarii6559/my-dev-workstation
+=== Absolute path ===
+/home/dumarii6559/my-dev-workstation/site/index.html
+=== Relative path ===
+-rw-r--r-- 1 dumarii6559 dumarii6559 342 Nov  3 15:31 site/index.html
