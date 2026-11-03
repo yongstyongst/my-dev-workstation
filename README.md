@@ -75,10 +75,10 @@ my-dev-workstation/
 ## 📸 실행 화면
 
 ### 기본 웹서버 (포트 8080)
-<img width="2392" height="1021" alt="스크린샷 2026-11-03 170238" src="https://github.com/user-attachments/assets/c2692bb2-73cc-4310-b240-3379ef042792" /><img width="2404" height="1025" alt="스크린샷 2026-11-03 170221" src="https://github.com/user-attachments/assets/f735f4c6-385f-41ba-898e-43838cdbbd83" />
+<img width="2392" height="1021" alt="스크린샷 2026-11-03 170238" src="https://github.com/user-attachments/assets/c2692bb2-73cc-4310-b240-3379ef042792" />
 
 ### 바인드 마운트 (포트 8081)
-![Uploading 스크린샷 2026-11-03 170221.png…]()
+<img width="2404" height="1025" alt="스크린샷 2026-11-03 170221" src="https://github.com/user-attachments/assets/02598795-70b2-4504-b965-407c070a8044" />
 
 ### Docker 볼륨 (포트 8082)
 <img width="2392" height="1019" alt="스크린샷 2026-11-03 170208" src="https://github.com/user-attachments/assets/5c00e818-94d1-4e85-80cc-f3b348e62fcd" />
