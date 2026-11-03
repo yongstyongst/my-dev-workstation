@@ -5,7 +5,11 @@
 ---
 
 ## 📁 프로젝트 구조
-
+my-dev-workstation/
+├── Dockerfile
+├── README.md
+└── site/
+└── index.html
 ---
 
 ## ⚙️ 실행 환경
