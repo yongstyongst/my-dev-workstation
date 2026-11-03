@@ -218,11 +218,11 @@ Linux 파일 권한은 소유자(User), 그룹(Group), 기타 사용자(Other)�
 | rwx | 7 | 읽기 + 쓰기 + 실행 |
 
 ```bash
-chmod 644 permission-test.txt
-ls -l permission-test.txt
+chmod 644 evidence/permission-test.txt
+ls -l evidence/permission-test.txt
 
-chmod 755 permission-test.txt
-ls -l permission-test.txt
+chmod 755 evidence/permission-test.txt
+ls -l evidence/permission-test.txt
 ```
 
 644는 소유자에게 읽기·쓰기 권한을 부여하고 그룹과 기타 사용자에게 읽기 권한을 부여한다. 755는 소유자에게 읽기·쓰기·실행 권한을 부여하고 그룹과 기타 사용자에게 읽기·실행 권한을 부여한다.
