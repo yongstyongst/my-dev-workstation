@@ -258,3 +258,11 @@ git log --oneline -5
 - GitHub: main 브랜치 동기화 확인
 
 ※ 위 결과는 실제 터미널 출력으로 확인했으며, Docker 볼륨의 재생성 후 데이터 영속성은 별도 검증이 필요합니다.
+
+### Docker 볼륨 영속성 추가 검증 (2026-11-03)
+
+- 테스트 볼륨: persistence-test
+- 첫 번째 임시 컨테이너에서 test.txt 생성 및 PERSISTENCE_OK 확인
+- 첫 번째 컨테이너 자동 삭제 후 새 컨테이너에서 PERSISTENCE_OK 재확인
+- 결과: 컨테이너 삭제 후에도 Docker 명명된 볼륨의 데이터 유지 확인
+- 기존 웹서버의 my-vol 재생성 검증은 수행하지 않음
