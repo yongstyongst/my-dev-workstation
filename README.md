@@ -123,3 +123,126 @@ my-dev-workstation/
 - 볼륨(`docker volume`)을 통한 데이터 영속성 확인
 - GitHub Personal Access Token을 활용한 원격 저장소 인증 방법 습득
 - 포트 충돌 문제를 `docker ps -a`로 진단하고 해결하는 방법 습득
+
+
+---
+
+## 🧪 AI 사전평가 보완: 재현 가능한 검증 명령어
+
+> **주의:** 아래는 평가 항목을 재현하고 결과를 수집하기 위한 명령어입니다. GitHub에 작성한 것만으로 실행이 검증되지는 않습니다. 기존 실행 로그와 스크린샷은 과거 실습 기록이며, 현재 상태는 로컬 WSL2 터미널에서 다시 확인해야 합니다.
+
+### 1. WSL2 / Ubuntu 및 권한 확인
+
+Windows PowerShell에서:
+
+```powershell
+wsl --status
+wsl -l -v
+```
+
+Ubuntu(WSL2)에서:
+
+```bash
+cat /etc/os-release
+whoami
+sudo -v
+```
+
+**확인할 증거:** WSL 버전 2, Ubuntu 배포판, sudo 인증 성공. 암호나 인증 토큰은 공개 저장소에 올리지 않습니다.
+
+### 2. Docker 설치 상태 및 이미지 목록
+
+```bash
+docker --version
+docker version
+docker info
+docker images
+```
+
+**확인할 증거:** Docker 클라이언트와 서버 정보, 이미지 목록. Docker 데몬 연결 오류가 발생하면 Docker Engine/Desktop 실행 상태와 WSL 통합 설정을 점검합니다.
+
+### 3. hello-world 실행 확인
+
+```bash
+docker run --rm hello-world
+```
+
+**성공 기준:** 출력에 `Hello from Docker!`가 나타납니다. 실제 출력 캡처를 첨부하면 검증 근거가 됩니다.
+
+### 4. Dockerfile 및 웹서버 이미지 빌드
+
+이 저장소 루트의 실제 Dockerfile:
+
+```dockerfile
+FROM nginx:alpine
+COPY site/ /usr/share/nginx/html/
+```
+
+저장소 루트에서 실행:
+
+```bash
+docker build -t my-webserver:latest .
+docker images
+```
+
+**성공 기준:** 빌드 명령이 오류 없이 종료되고 이미지 목록에 `my-webserver:latest`가 표시됩니다. 이 Dockerfile은 정적 웹 페이지를 Nginx 기본 문서 경로로 복사합니다.
+
+### 5. 컨테이너 실행과 HTTP 확인
+
+8080 포트가 비어 있을 때:
+
+```bash
+docker run -d --name my-web-check -p 8080:80 my-webserver:latest
+docker ps
+curl -I http://localhost:8080
+```
+
+**성공 기준:** 컨테이너가 실행 상태이고 HTTP 응답이 확인됩니다. 이미 8080 포트를 사용하는 컨테이너가 있다면 먼저 `docker ps -a`로 확인하고, 기존 컨테이너를 임의로 삭제하지 않습니다. 필요하면 다른 호스트 포트를 선택합니다.
+
+### 6. 바인드 마운트와 볼륨 검증
+
+바인드 마운트 예시(8081 포트가 비어 있을 때):
+
+```bash
+docker run -d --name my-bind-check -p 8081:80 -v "$(pwd)/site:/usr/share/nginx/html:ro" nginx:alpine
+curl -I http://localhost:8081
+```
+
+Docker 관리 볼륨 예시(8082 포트가 비어 있을 때):
+
+```bash
+docker volume create my-site-data
+docker run -d --name my-volume-check -p 8082:80 -v my-site-data:/usr/share/nginx/html nginx:alpine
+docker volume inspect my-site-data
+docker ps -a
+```
+
+**주의:** 빈 볼륨을 Nginx 문서 경로에 연결하면 기존 사이트 파일이 보이지 않을 수 있습니다. 볼륨의 데이터 영속성을 증명하려면 컨테이너를 교체한 뒤 같은 볼륨의 파일이 유지되는지 별도로 검사해야 합니다. 기존 README의 8080·8081·8082 기록은 과거 실습 결과입니다.
+
+### 7. Git 설정과 원격 저장소 검증
+
+```bash
+git --version
+git config --global --list
+git status
+git branch --show-current
+git remote -v
+git log --oneline -5
+```
+
+**성공 기준:** Git 설정, 현재 브랜치, 원격 저장소 URL, 최근 커밋이 확인됩니다. 이 저장소의 원격 주소는 `https://github.com/yongstyongst/my-dev-workstation`입니다. 개인 이메일, 액세스 토큰, 인증 정보는 공개하지 않습니다.
+
+### 8. 재평가 전 증거 체크리스트
+
+- [ ] WSL2와 Ubuntu 버전 출력 캡처
+- [ ] sudo 권한 확인(비밀번호 제외)
+- [ ] Docker 클라이언트/서버 버전 출력
+- [ ] hello-world 성공 메시지
+- [ ] docker build 성공 로그와 docker images 목록
+- [ ] docker ps 및 8080 HTTP 응답
+- [ ] 바인드 마운트 8081 동작 증거
+- [ ] Docker 볼륨 8082 및 데이터 영속성 확인
+- [ ] git config, git remote -v, git log 결과
+- [ ] 실제 출력 및 오류 해결 과정을 README에 반영
+
+**평가 점수에 대한 안내:** 이 문서 보완은 평가 기준과의 대응성을 높이지만, 로컬 실행 증거 없이 18개 항목의 통과를 보장하지 않습니다.
