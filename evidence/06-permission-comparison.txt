@@ -1,0 +1,1 @@
+-rwxr-xr-x 1 dumarii6559 dumarii6559 0 Nov  3 20:40 /home/dumarii6559/my-dev-workstation/evidence/permission-test.txt

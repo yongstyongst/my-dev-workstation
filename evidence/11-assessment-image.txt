@@ -1,0 +1,2 @@
+IMAGE                     ID             DISK USAGE   CONTENT SIZE   EXTRA
+my-webserver:assessment   255dbf21fc3d       93.6MB         26.3MB   U    

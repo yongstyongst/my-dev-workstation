@@ -1,0 +1,1 @@
+-rw-r--r-- 1 dumarii6559 dumarii6559 0 Nov  3 20:39 /home/dumarii6559/my-dev-workstation/evidence/practice.txt

@@ -1,0 +1,13 @@
+=== Git user.name ===
+yongstyongst
+=== Git default branch ===
+=== Current branch ===
+main
+=== Remote URL ===
+https://github.com/yongstyongst/my-dev-workstation.git
+=== Recent commits ===
+4d6048c docs: verify Docker volume persistence
+b5de3db docs: add verified environment results
+0bd861a docs: correct Ubuntu version to 26.04.1 LTS
+a768540 docs: add reproducible WSL Docker Git verification checklist for assessment
+cc02ab1 Fix image tags in README for screenshots

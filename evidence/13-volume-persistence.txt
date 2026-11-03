@@ -1,0 +1,5 @@
+=== Volume mount ===
+/dev/sdg on /data type ext4 (ro,relatime)
+=== Saved file ===
+-rw-r--r--    1 root     root            15 Nov  3 11:05 /data/test.txt
+PERSISTENCE_OK

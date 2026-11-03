@@ -1,0 +1,6 @@
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+alpine:latest          be2656061b53         13MB         3.94MB        
+hello-world:latest     c567b231f656       25.9kB         9.49kB        
+my-web-server:latest   df1af2c746b5       93.6MB         26.3MB   U    
+my-webserver:latest    ce03a574955c       93.6MB         26.3MB   U    
+my-webserver:verify    470d5df473d5       93.6MB         26.3MB   U    
