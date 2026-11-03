@@ -217,15 +217,38 @@ docker images
 
 ### 5. 컨테이너 실행과 HTTP 확인
 
-8080 포트가 비어 있을 때:
+컨테이너 실행 전 호스트 포트의 사용 여부를 확인한다.
 
 ```bash
-docker run -d --name my-web-check -p 8080:80 my-webserver:latest
-docker ps
-curl -I http://localhost:8080
+docker ps --format 'table {{.Names}}\\t{{.Ports}}'
+ss -ltn | grep ':18080 ' || echo 'PORT_18080_AVAILABLE'
 ```
 
-**성공 기준:** 컨테이너가 실행 상태이고 HTTP 응답이 확인됩니다. 이미 8080 포트를 사용하는 컨테이너가 있다면 먼저 `docker ps -a`로 확인하고, 기존 컨테이너를 임의로 삭제하지 않습니다. 필요하면 다른 호스트 포트를 선택합니다.
+포트가 사용 가능하면 이미 빌드한 이미지를 이용해 컨테이너를 실행한다.
+
+```bash
+docker run -d --name my-web-assessment -p 18080:80 my-webserver:assessment
+docker ps --filter name=my-web-assessment
+```
+
+`-p 18080:80`은 호스트의 18080 포트를 컨테이너 내부의 80번 포트에 연결한다.
+
+HTTP 응답과 웹페이지 본문을 확인한다.
+
+```bash
+curl -i http://localhost:18080
+```
+
+**실제 검증 결과 (2026-11-03):** 컨테이너 `my-web-assessment` 실행, 포트 매핑 `18080→80`, HTTP `200 OK`, Nginx 응답 및 HTML 본문 반환을 확인했다. 실행 결과는 `evidence/15-port-mapping-http.txt`에 저장했다.
+
+검증이 끝나면 테스트 컨테이너만 정리한다.
+
+```bash
+docker rm -f my-web-assessment
+docker ps
+```
+
+**주의:** 포트 충돌이 발생하면 `docker ps`와 `ss -ltn`으로 사용 현황을 확인한다. 기존 컨테이너를 임의로 삭제하지 말고 사용 가능한 다른 호스트 포트를 선택한다.
 
 ### 6. 바인드 마운트와 볼륨 검증
 
