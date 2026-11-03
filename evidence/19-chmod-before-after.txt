@@ -1,0 +1,4 @@
+변경 전 (644):
+-rw-r--r-- 1 dumarii6559 dumarii6559 0 Nov  3 21:50 evidence/chmod-test.txt
+변경 후 (755):
+-rwxr-xr-x 1 dumarii6559 dumarii6559 0 Nov  3 21:50 evidence/chmod-test.txt
