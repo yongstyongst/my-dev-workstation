@@ -1,0 +1,9 @@
+=== Docker port usage ===
+NAMES          PORTS
+my-web-vol     0.0.0.0:8082->80/tcp, [::]:8082->80/tcp
+my-web-mount   0.0.0.0:8081->80/tcp, [::]:8081->80/tcp
+my-site        0.0.0.0:8080->80/tcp, [::]:8080->80/tcp
+=== Listening ports ===
+LISTEN 0      4096                *:8080            *:*          
+LISTEN 0      4096                *:8081            *:*          
+LISTEN 0      4096                *:8082            *:*          
