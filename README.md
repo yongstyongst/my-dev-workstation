@@ -219,6 +219,14 @@ docker build -t my-webserver:latest .
 
 절대경로는 자동화 스크립트나 외부 경로를 명확하게 지정할 때 유리하다. 상대경로는 프로젝트 이동과 재사용이 편리하지만 실행 위치에 따라 결과가 달라질 수 있다. Docker 빌드 명령의 마지막 점(`.`)은 현재 디렉토리를 빌드 컨텍스트로 지정한다.
 
+**실제 실습 결과 (2026-11-03)**
+
+- 현재 작업 디렉터리: `/home/dumarii6559/my-dev-workstation`
+- 절대경로: `/home/dumarii6559/my-dev-workstation/site/index.html`
+- 상대경로: `site/index.html`
+- 검증 결과: 두 경로가 동일한 파일을 가리키는 것을 확인하였다.
+- 실행 증거: `evidence/17-path-verification.txt`
+
 ### 4. Linux 파일 권한과 숫자 표기 규칙
 
 Linux 파일 권한은 소유자(User), 그룹(Group), 기타 사용자(Other)의 세 범위로 구분하며 읽기(r), 쓰기(w), 실행(x) 권한으로 구성한다.
