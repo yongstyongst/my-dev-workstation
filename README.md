@@ -5,11 +5,14 @@
 ---
 
 ## 📁 프로젝트 구조
+
+```
 my-dev-workstation/
-├── Dockerfile
-├── README.md
+├── Dockerfile          # 웹서버 이미지 빌드 설정
+├── README.md           # 프로젝트 문서
 └── site/
-└── index.html
+    └── index.html      # 웹 페이지 (한글 인코딩 적용)
+```
 ---
 
 ## ⚙️ 실행 환경
