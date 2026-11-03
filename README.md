@@ -388,10 +388,10 @@ git log --oneline -5
 
 - [ ] WSL2와 Ubuntu 버전 출력 캡처
 - [ ] sudo 권한 확인(비밀번호 제외)
-- [ ] Docker 클라이언트/서버 버전 출력
-- [ ] hello-world 성공 메시지
-- [ ] docker build 성공 로그와 docker images 목록
-- [ ] docker ps 및 8080 HTTP 응답
+- [x] Docker 클라이언트/서버 버전 출력
+- [x] hello-world 성공 메시지
+- [x] docker build 성공 로그와 docker images 목록
+- [x] docker ps 및 8080 HTTP 응답
 - [ ] 바인드 마운트 8081 동작 증거
 - [ ] Docker 볼륨 8082 및 데이터 영속성 확인
 - [ ] git config, git remote -v, git log 결과
