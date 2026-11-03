@@ -6,13 +6,41 @@
 
 ## 📁 프로젝트 구조
 
-```
+```text
 my-dev-workstation/
 ├── Dockerfile          # 웹서버 이미지 빌드 설정
-├── README.md           # 프로젝트 문서
-└── site/
-    └── index.html      # 웹 페이지 (한글 인코딩 적용)
+├── README.md           # 프로젝트 설명 및 실행·검증 문서
+├── site/               # 웹서버에 제공할 정적 콘텐츠
+│   └── index.html      # 메인 웹 페이지
+├── practice/           # Linux 파일 및 디렉토리 실습 자료
+│   └── hello.txt       # 파일 관리 실습 파일
+└── evidence/            # 실제 실행 결과 및 평가 증거 보관
+    ├── 01-directory-created.txt
+    ├── 02-file-created.txt
+    ├── 03-file-moved.txt
+    ├── 04-file-deleted.txt
+    ├── 05-chmod-755.txt
+    ├── 06-permission-comparison.txt
+    ├── 07-docker-info.txt
+    ├── 08-hello-world.txt
+    ├── 09-docker-images.txt
+    ├── 10-docker-build.txt
+    ├── 11-assessment-image.txt
+    ├── 12-http-responses.txt
+    ├── 13-volume-persistence.txt
+    ├── 14-git-configuration.txt
+    └── permission-test.txt
 ```
+
+### 디렉토리 구성 및 설계 기준
+
+- **Dockerfile:** 웹서버 이미지 생성에 필요한 설정을 프로젝트 루트에 배치하여 빌드 명령을 간결하게 유지한다.
+- **site/:** 웹페이지와 Docker 실행 설정을 분리하여 콘텐츠 수정 및 유지보수가 쉽도록 구성한다.
+- **practice/:** Linux 명령어 실습에 사용하는 파일을 별도 관리하여 실제 서비스 파일과 혼동하지 않도록 한다.
+- **evidence/:** Docker, Linux, Git의 실제 실행 결과를 저장하여 작업의 재현성과 검증 가능성을 높인다.
+- **README.md:** 환경 구성, 실행 방법, 검증 결과 및 문제 해결 과정을 통합 관리한다.
+
+이러한 구조는 파일의 역할을 명확하게 구분하고, 향후 웹 콘텐츠와 실습 항목이 증가하더라도 관리하기 쉽도록 설계하였다.
 ---
 
 ## ⚙️ 실행 환경
