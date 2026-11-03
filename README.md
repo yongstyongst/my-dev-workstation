@@ -30,7 +30,7 @@ my-dev-workstation/
     ├── 13-volume-persistence.txt
     ├── 14-git-configuration.txt
     ├── 15-port-mapping-http.txt
-    └── permission-test.txt```
+    └── permission-test.txt
 
 ### 디렉토리 구성 및 설계 기준
 
