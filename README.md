@@ -246,3 +246,15 @@ git log --oneline -5
 - [ ] 실제 출력 및 오류 해결 과정을 README에 반영
 
 **평가 점수에 대한 안내:** 이 문서 보완은 평가 기준과의 대응성을 높이지만, 로컬 실행 증거 없이 18개 항목의 통과를 보장하지 않습니다.
+
+## 실제 환경 검증 결과 (2026-11-03)
+
+- Ubuntu: 26.04.1 LTS
+- WSL2 커널: 6.18.54.1-microsoft-standard-WSL2
+- Docker Client / Server Engine: 29.9.2
+- Docker Desktop: 4.97.0
+- Docker 이미지 빌드: my-webserver:verify 생성 성공 (캐시 사용)
+- HTTP 응답: 8080, 8081, 8082 모두 200 OK
+- GitHub: main 브랜치 동기화 확인
+
+※ 위 결과는 실제 터미널 출력으로 확인했으며, Docker 볼륨의 재생성 후 데이터 영속성은 별도 검증이 필요합니다.
