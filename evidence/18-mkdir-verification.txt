@@ -1,0 +1,4 @@
+$ mkdir -pv evidence/mkdir-test
+mkdir: created directory 'evidence/mkdir-test'
+$ ls -ld evidence/mkdir-test
+drwxr-xr-x 2 dumarii6559 dumarii6559 4096 Nov  3 21:49 evidence/mkdir-test
