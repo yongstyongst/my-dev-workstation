@@ -19,7 +19,7 @@ my-dev-workstation/
 
 | 항목 | 내용 |
 |------|------|
-| OS | Windows 11 + WSL2 (Ubuntu 22.04) |
+| OS | Windows 11 + WSL2 (Ubuntu 26.04.1 LTS) |
 | 쉘/터미널 | bash / Windows Terminal |
 | Docker 버전 | 29.9.2 (build a82e528) |
 | Git 버전 | 2.53.0 |
