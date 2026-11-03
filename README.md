@@ -29,7 +29,6 @@ my-dev-workstation/
     ├── 12-http-responses.txt
     ├── 13-volume-persistence.txt
     ├── 14-git-configuration.txt
-    ├── 14-git-configuration.txt
     ├── 15-port-mapping-http.txt
     └── permission-test.txt```
 
