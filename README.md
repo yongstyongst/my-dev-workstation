@@ -2,6 +2,8 @@
 
 > WSL2 + Ubuntu + Docker 환경 구축 및 웹 서버 배포 실습 프로젝트
 
+<img width="768" height="520" alt="01_workstation_architecture" src="https://github.com/user-attachments/assets/5977ec12-8325-41ae-9249-49036a1da6af" />
+
 ---
 
 ## 📁 프로젝트 구조
@@ -169,6 +171,8 @@ my-dev-workstation/
 | 단점 | 호스트 경로와 권한 설정에 영향을 받음 | 호스트에서 직접 파일을 관리하기 상대적으로 불편함 |
 | 권장 상황 | 웹 페이지 개발, 소스 코드 수정 및 실시간 반영 | 데이터베이스, 운영 데이터 및 장기 보관 |
 
+<img width="768" height="504" alt="03_bind_mount_vs_volume" src="https://github.com/user-attachments/assets/a139720e-e278-445e-8b16-31aa94175789" />
+
 **실습 적용 및 선택 기준**
 
 본 프로젝트에서는 웹 페이지의 수정 사항을 실시간으로 확인하기 위해 바인드 마운트를 사용하였다. 반면 Docker 볼륨은 컨테이너의 생명주기와 독립적으로 데이터를 보존해야 할 때 적합하다. 따라서 개발 단계에서는 바인드 마운트를, 데이터 영속성이 중요한 운영 환경에서는 Docker 볼륨을 우선적으로 고려한다.
@@ -187,6 +191,8 @@ docker exec -it my-web-check sh
 ```
 
 이미지를 빌드한 후 컨테이너를 생성하고 실행한다. 실행 중인 컨테이너 내부의 변경 사항은 기본적으로 해당 컨테이너의 쓰기 가능 계층에 기록된다. 컨테이너를 삭제하면 이 계층의 데이터는 사라질 수 있으므로 영속성이 필요한 데이터는 볼륨이나 바인드 마운트로 관리한다.
+
+<img width="768" height="520" alt="02_port_mapping" src="https://github.com/user-attachments/assets/06b8ed0e-874d-47ba-9bbc-de5f885de204" />
 
 ### 2. 네트워크 네임스페이스와 포트 포워딩
 
@@ -420,6 +426,8 @@ git log --oneline -5
 - 기존 웹서버의 my-vol 재생성 검증은 수행하지 않음
 
 ## E1-1 보너스 과제 3: Docker Compose 운영 명령어
+
+<img width="768" height="504" alt="04_compose_operations" src="https://github.com/user-attachments/assets/354911e3-552d-466b-929f-c82bfe07eae2" />
 
 ### 1. 실습 환경
 - OS: Ubuntu 26.04.1 LTS (WSL2)
