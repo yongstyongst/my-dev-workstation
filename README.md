@@ -192,9 +192,9 @@ docker exec -it my-web-check sh
 
 이미지를 빌드한 후 컨테이너를 생성하고 실행한다. 실행 중인 컨테이너 내부의 변경 사항은 기본적으로 해당 컨테이너의 쓰기 가능 계층에 기록된다. 컨테이너를 삭제하면 이 계층의 데이터는 사라질 수 있으므로 영속성이 필요한 데이터는 볼륨이나 바인드 마운트로 관리한다.
 
-<img width="768" height="520" alt="02_port_mapping" src="https://github.com/user-attachments/assets/06b8ed0e-874d-47ba-9bbc-de5f885de204" />
-
 ### 2. 네트워크 네임스페이스와 포트 포워딩
+
+<img width="768" height="520" alt="02_port_mapping" src="https://github.com/user-attachments/assets/06b8ed0e-874d-47ba-9bbc-de5f885de204" />
 
 Linux 네트워크 네임스페이스는 프로세스의 네트워크 인터페이스, IP 주소, 라우팅 테이블 및 포트 공간을 분리하는 기능이다. Docker 컨테이너는 독립적인 네트워크 환경을 사용하므로 컨테이너 내부의 80번 포트가 호스트에서 자동으로 접근 가능한 것은 아니다.
 
