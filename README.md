@@ -419,7 +419,6 @@ git log --oneline -5
 - 결과: 컨테이너 삭제 후에도 Docker 명명된 볼륨의 데이터 유지 확인
 - 기존 웹서버의 my-vol 재생성 검증은 수행하지 않음
 
-cat > evidence/compose-operations.md <<'EOF'
 # E1-1 보너스 과제 3: Docker Compose 운영 명령어
 
 ## 1. 실습 환경
