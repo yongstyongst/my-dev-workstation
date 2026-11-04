@@ -11,6 +11,7 @@
 ```text
 my-dev-workstation/
 ├── Dockerfile          # 웹서버 이미지 빌드 설정
+├── compose.yaml        # Docker Compose 서비스 실행 설정
 ├── README.md           # 프로젝트 설명 및 실행·검증 문서
 ├── site/               # 웹서버에 제공할 정적 콘텐츠
 │   └── index.html      # 메인 웹 페이지
@@ -32,8 +33,8 @@ my-dev-workstation/
     ├── 13-volume-persistence.txt
     ├── 14-git-configuration.txt
     ├── 15-port-mapping-http.txt
-    └── permission-test.txt
-```
+    ├── permission-test.txt
+    └── compose-operations.md   # 보너스 과제 3 실행 기록```
 
 ### 디렉토리 구성 및 설계 기준
 
