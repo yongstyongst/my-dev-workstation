@@ -34,7 +34,8 @@ my-dev-workstation/
     ├── 14-git-configuration.txt
     ├── 15-port-mapping-http.txt
     ├── permission-test.txt
-    └── compose-operations.md   # 보너스 과제 3 실행 기록```
+    └── compose-operations.md   # 보너스 과제 3 실행 기록
+```
 
 ### 디렉토리 구성 및 설계 기준
 
