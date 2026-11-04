@@ -418,3 +418,20 @@ git log --oneline -5
 - 첫 번째 컨테이너 자동 삭제 후 새 컨테이너에서 PERSISTENCE_OK 재확인
 - 결과: 컨테이너 삭제 후에도 Docker 명명된 볼륨의 데이터 유지 확인
 - 기존 웹서버의 my-vol 재생성 검증은 수행하지 않음
+
+cat > evidence/compose-operations.md <<'EOF'
+# E1-1 보너스 과제 3: Docker Compose 운영 명령어
+
+## 1. 실습 환경
+- OS: Ubuntu 26.04.1 LTS (WSL2)
+- Docker Engine: 29.9.3
+- Docker Compose: v5.7.0
+- Git: 2.53.0
+- 서비스: Nginx 웹 서버
+- 포트: 8080:80
+
+## 2. Compose 서비스 실행
+
+명령어:
+```bash
+sudo docker compose up -d --build
