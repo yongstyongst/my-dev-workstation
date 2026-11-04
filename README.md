@@ -419,18 +419,38 @@ git log --oneline -5
 - 결과: 컨테이너 삭제 후에도 Docker 명명된 볼륨의 데이터 유지 확인
 - 기존 웹서버의 my-vol 재생성 검증은 수행하지 않음
 
-# E1-1 보너스 과제 3: Docker Compose 운영 명령어
+## E1-1 보너스 과제 3: Docker Compose 운영 명령어
 
-## 1. 실습 환경
+### 1. 실습 환경
 - OS: Ubuntu 26.04.1 LTS (WSL2)
 - Docker Engine: 29.9.3
 - Docker Compose: v5.7.0
 - Git: 2.53.0
-- 서비스: Nginx 웹 서버
-- 포트: 8080:80
+- 서비스: Nginx 웹 서버 (8080:80)
 
-## 2. Compose 서비스 실행
+### 2. 운영 명령어 실습
 
-명령어:
-```bash
-sudo docker compose up -d --build
+| 명령어 | 수행 내용 | 결과 |
+|---|---|---|
+| `sudo docker compose up -d --build` | 이미지 빌드 및 컨테이너 실행 | 성공 |
+| `sudo docker compose ps` | 컨테이너 실행 상태 확인 | Up |
+| `sudo docker compose logs` | Nginx 실행 및 HTTP 요청 로그 확인 | HTTP 200 |
+| `sudo docker compose down` | 컨테이너 및 네트워크 제거 | 성공 |
+| `sudo docker compose ps -a` | 종료 후 상태 확인 | 컨테이너 없음 |
+
+### 3. 검증 결과
+
+- Nginx 웹 서버가 호스트 8080 포트에서 정상 실행됨
+- `curl http://localhost:8080` 실행으로 HTML 응답 확인
+- Nginx 로그에서 `GET / HTTP/1.1` 요청과 HTTP 200 응답 확인
+- `down` 이후 컨테이너 및 기본 네트워크 제거 확인
+
+### 4. 실습 자료
+
+- [Docker Compose 설정 파일](compose.yaml)
+- [보너스 과제 실행 기록](evidence/compose-operations.md)
+
+### 5. 학습 내용
+
+Docker Compose의 `up`, `ps`, `logs`, `down` 명령어를 활용해 서비스 실행부터 종료까지의 운영 과정을 직접 검증하였다. 이를 통해 컨테이너 상태 확인과 로그 분석의 중요성을 이해하였다.
+
